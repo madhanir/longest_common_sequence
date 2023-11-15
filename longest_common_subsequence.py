@@ -10,16 +10,16 @@ def longest_common_subsequence(str1 : str, str2: str) -> str:
     #  Prepare all the unique sub-strings from str2
     str_lst = [str2[i:] for i in range(len(str2))]
     
-    # Take each string from prepared list and check the matching sequence with str1
+    # Take each string from prepared list and check the order sequence with str1
     for list1 in str_lst:
         search_index = 0
         chars_found = ""
 
-        # Loop through each character to validate which characters follow sequence with str1
+        # Loop through each character to validate which characters follow order sequence with str1
         for char in list1:
             index_found = str1.find(char, search_index)
 
-            #  Character is following sequence with str1 hence store its value
+            #  Character is following order sequence with str1 hence store its value
             if index_found != -1:
                 chars_found += char
                 if len(str1) > index_found + 1:
