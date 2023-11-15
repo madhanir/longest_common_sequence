@@ -4,11 +4,12 @@ def longest_common_subsequence(str1 : str, str2: str) -> str:
     '''
         Function to return the longest common sub-sequence between the two strings
     '''
+    # Initialize subseq_lst as empty list
     subseq_lst = []
 
     #  Prepare all the unique sub-strings from str2
     str_lst = [str2[i:] for i in range(len(str2))]
-
+    
     # Take each string from prepared list and check the matching sequence with str1
     for list1 in str_lst:
         search_index = 0
@@ -33,7 +34,8 @@ def longest_common_subsequence(str1 : str, str2: str) -> str:
 
     # Sort the list to find longest subsequence and return it
     sorted_subseq_lst = sorted(subseq_lst, key=len, reverse=True)
-
+    
+    # Return the longest common subsequence
     if len(sorted_subseq_lst) > 0:
         return sorted_subseq_lst[0]
     else:
